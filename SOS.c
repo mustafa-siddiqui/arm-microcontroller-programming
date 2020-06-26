@@ -1,15 +1,15 @@
 /** @file	SOS.c
- * 	@brief 	Program for sending an SOS signal as Morse Code
- * 			using the LED on the ARM TM4C123 LaunchPad.
- * 			The program operates as follows:
- * 			Pressing SW1 starts SOS (Green LED flashes SOS)
- * 			- S: toggle light 3 times with 1/2 sec gap between on/off
- * 			- O: toggle light 3 times with 2 sec gap between on/off
- * 			- S: toggle light 3 times with 1/2 sec gap between on/off
- * 			- 5 second delay between SOS messages
- * 			Pressing SW2 stops SOS.
- * 	@author Mustafa Siddiqui
- * 	@date 	06/25/20
+ *  @brief	Program for sending an SOS signal as Morse Code
+ * 		using the LED on the ARM TM4C123 LaunchPad.
+ * 		The program operates as follows:
+ * 		Pressing SW1 starts SOS (Green LED flashes SOS)
+ * 		- S: toggle light 3 times with 1/2 sec gap between on/off
+ * 		- O: toggle light 3 times with 2 sec gap between on/off
+ * 		- S: toggle light 3 times with 1/2 sec gap between on/off
+ * 		- 5 second delay between SOS messages
+ * 		Pressing SW2 stops SOS.
+ *  @author 	Mustafa Siddiqui
+ *  @date 	06/25/20
  */
 
 /* Define Ports */
@@ -29,28 +29,28 @@ unsigned long SW1;					// input from PF4
 unsigned long SW2;					// input from PF0
 
 /** @fn		void portF_Init(void)
- * 	@brief 	Initializes port F pins for input and output. PF4 is input
- * 			SW1 and PF2 is output LED.
+ *  @brief 	Initializes port F pins for input and output. PF4 is input
+ * 		SW1 and PF2 is output LED.
 */
 void portF_Init(void);
 
 /** @fn 	void flash_SOS(void)
- * 	@brief	Flashes the green LED SOS once.
- * 			PF3 is green LED: SOS
+ *  @brief	Flashes the green LED SOS once.
+ * 		PF3 is green LED: SOS
 */
 void flash_SOS(void);
 
 /** @fn		void delay(unsigned long)
- * 	@brief 	Subroutine to delay in units of half-seconds.
- * 	@param 	Half-seconds to be delayed for.
+ *  @brief 	Subroutine to delay in units of half-seconds.
+ *  @param 	Half-seconds to be delayed for.
 */
 void delay(unsigned long halfSecs);
 
 /** @fn		main()
- * 	@brief 	This is the main function of the program that calls other
+ *  @brief 	This is the main function of the program that calls other
  * 			defined functions to send SOS messages using the Green LED
  * 			on the LaunchPad until SW2 is pressed.
- * 	@return An integer when successfully run.
+ *  @return An integer when successfully run.
 */
 int main(void) {
 	
@@ -108,7 +108,7 @@ void portF_Init(void) {
 
 /* 	Flash SOS */
 /* 	Color 	|	LED(s)	| Port F
-	-----------------------------
+	---------------------------------------
 	dark 	| 	---		| 0
 	red 	|	R--		| 0x02
 	blue 	| 	--B		| 0x04
@@ -165,10 +165,10 @@ void flash_SOS(void) {
 	delay(10);
 }
 
-/* 	Delay */
-/* 	Originally count = 400,000 which took 0.13 sec to complete
-	Changed it to 400000 * 0.5 / 0.13 = 1538460 so that it takes
-	0.5 seconds to complete.
+/* Delay */
+/* Originally count = 400,000 which took 0.13 sec to complete
+   Changed it to 400000 * 0.5 / 0.13 = 1538460 so that it takes
+   0.5 seconds to complete.
 */
 void delay(unsigned long halfSecs) {
 	unsigned long count;
