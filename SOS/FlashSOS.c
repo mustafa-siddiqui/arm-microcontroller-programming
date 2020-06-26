@@ -1,4 +1,4 @@
-/** @file	SOS.c
+/** @file	FlashSOS.c
  *  @brief	Program for sending an SOS signal as Morse Code
  * 		using the LED on the ARM TM4C123 LaunchPad.
  * 		The program operates as follows:
