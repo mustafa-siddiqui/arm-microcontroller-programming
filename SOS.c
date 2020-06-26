@@ -29,8 +29,8 @@ unsigned long SW1;					// input from PF4
 unsigned long SW2;					// input from PF0
 
 /** @fn		void portF_Init(void)
-	@brief 	Initializes port F pins for input and output. PF4 is input
-			SW1 and PF2 is output LED.
+ * 	@brief 	Initializes port F pins for input and output. PF4 is input
+ * 			SW1 and PF2 is output LED.
 */
 void portF_Init(void);
 
