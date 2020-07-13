@@ -76,24 +76,24 @@ int main(void) {
 	unsigned long SW1, SW2;
 	unsigned long prevGPIO_PORTF_DATA_R;
 	
-  PortF_Init();   											    // initialize PF1 to output
-  SysTick_Init(); 											    // initialize SysTick, runs at 16 MHz
+  PortF_Init();		// initialize PF1 to output
+  SysTick_Init(); 	// initialize SysTick, runs at 16 MHz
 	
-  i = 0;          											    // array index
+  i = 0;          	// array index
   last = NVIC_ST_CURRENT_R;
   
 	while(1) {
-		SW1 = (GPIO_PORTF_DATA_R & 0x10) >> 4;	// PF4
-		SW2 = (GPIO_PORTF_DATA_R & 0x1);		    // PF0
-		prevGPIO_PORTF_DATA_R = GPIO_PORTF_DATA_R & 0x13;		// store PF0, PF1, and PF4
-		Led = GPIO_PORTF_DATA_R;   				      // read previous
-		if ((SW1 & SW2) == 0x0) {					      // if either of the switches are pressed (negative logic)
-			Led = Led^0x02;            			      // toggle red LED
+		SW1 = (GPIO_PORTF_DATA_R & 0x10) >> 4;			// PF4
+		SW2 = (GPIO_PORTF_DATA_R & 0x1);		    	// PF0
+		prevGPIO_PORTF_DATA_R = GPIO_PORTF_DATA_R & 0x13;	// store PF0, PF1, and PF4
+		Led = GPIO_PORTF_DATA_R;				// read previous
+		if ((SW1 & SW2) == 0x0) {				// if either of the switches are pressed (negative logic)
+			Led = Led^0x02;					// toggle red LED
 		}
 		else {
 			Led = 0x0;
 		}
-    GPIO_PORTF_DATA_R = Led;   				      // output
+    GPIO_PORTF_DATA_R = Led;   				      		// output
 		
 		// check for change in PF0, PF1, and PF4
 		if (prevGPIO_PORTF_DATA_R != (GPIO_PORTF_DATA_R & 0x13)) {
