@@ -18,4 +18,4 @@
 | 3       | waitEast | 010100  | 5    | goNorth | goNorth | goNorth | goNorth |
 
 #### State Transition Graph
-![State Transition Graph](/Users/mustafasiddiqui/Desktop/College\ Study/Code/stateTransitionGraph.png)
+![State Transition Graph](stateTransitionGraph.png)
