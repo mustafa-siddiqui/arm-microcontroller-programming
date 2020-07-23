@@ -19,3 +19,4 @@
 
 #### State Transition Graph
 ![State Transition Graph](stateTransitionGraph.png)
+**Note:** Image taken from edEx course website
