@@ -21,7 +21,7 @@ The microcontroller is configured as:
     - Change states (depends on the inputs and state)
 
 ### State Transition Table
-| State # | Name | Lights (Port B) | Wait Time (ms)| In=0 | In=1 | In=2 | In=3 |
+| State # | Name | Lights (Port B) | Wait Time (10 ms)| In=0 | In=1 | In=2 | In=3 |
 | --------|------|--------|-----------|------|------|------|------|
 | 0       | goNorth | 100001   | 30   | goNorth | waitNow | goNorth | waitNow |
 | 1       | waitNorth | 100010 | 5    | goEast  | goEast  | goEast  | goEast  |
