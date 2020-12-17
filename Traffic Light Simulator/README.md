@@ -1,6 +1,6 @@
 # Traffic Light Simulator
 
-This is an implementation of a Moore finite state machine that simulates the behavior of a traffic light. The traffic lights can be thought of as a system of two traffic lights on two roads going east and north that meet at a junction.
+This is an implementation of a Mealy finite state machine that simulates the behavior of a traffic light. The traffic lights can be thought of as a system of two traffic lights on two roads going east and north that meet at a junction.
 The microcontroller is configured as:
 - east facing red light connected to PB5
 - east facing yellow light connected to PB4
